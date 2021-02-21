@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        {% if form.actors %}
+            {{ actors.name }}
+        {% endif %}
+
+        <button class="button button2" type="submit" value="Submit">Create Actor</button>
+    </form>
+</div>
+</body>
+</html>

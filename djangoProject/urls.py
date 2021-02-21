@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from users.views import hello, index, CreateUser
+from movies.views import Create_movie, Create_actor, ActorListView, MovieListView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,9 +24,10 @@ urlpatterns = [
     path('hello/<word>/', hello),
     path('hello/', hello),
     path('', index, name='index'),
-    path('user/create', CreateUser.as_view())
-
-
-
+    path('user/create', CreateUser.as_view()),
+    path('movie/create', Create_movie.as_view(), name="create_movie"),
+    path('actor/create', Create_actor.as_view(), name="create_actor"),
+    path('movie/list', MovieListView.as_view(), name="movie_list"),
+    path('actor/list', ActorListView.as_view(), name="actor_list"),
 
 ]

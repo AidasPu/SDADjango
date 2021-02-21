@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Movies</h1>
+<ul>
+    {% for movie in object_list %}
+        <li>{{ movie.title }} - {{ movie.actor.name }}</li>
+    {% empty %}
+        <li>No movies yet.</li>
+    {% endfor %}
+</ul>
+</body>
+</html>
