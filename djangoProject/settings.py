@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 from django.utils.translation import ugettext_lazy as _
+
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -20,8 +21,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
+AUTH_USER_MODEL = 'accounts.CustomUser'
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'Should be kept a secret!'
+SECRET_KEY = 'vnivon3i2ovn32oin23voin23'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -38,8 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'users',
+    'old_uers',
     'movies',
+    'accounts'
 ]
 
 MIDDLEWARE = [
@@ -131,3 +134,5 @@ LANGUAGES = [
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),
 )
+
+LOGIN_REDIRECT_URL = 'index'

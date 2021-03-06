@@ -15,19 +15,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from users.views import hello, index, CreateUser
 from movies.views import Create_movie, Create_actor, ActorListView, MovieListView
+from django.contrib.auth import views as user_views
+from accounts.views import register, hello, index
 
 urlpatterns = [
+    path('accounts/login/', user_views.LoginView.as_view(template_name='login.html'), name="login"),
+    path('logout/', user_views.LogoutView.as_view(), name="logout"),
+    path('register/', register, name="register"),
     path('admin/', admin.site.urls),
     path('hello/<word>/<word1>', hello),
     path('hello/<word>/', hello),
     path('hello/', hello),
     path('', index, name='index'),
-    path('user/create', CreateUser.as_view()),
     path('movie/create', Create_movie.as_view(), name="create_movie"),
     path('actor/create', Create_actor.as_view(), name="create_actor"),
     path('movie/list', MovieListView.as_view(), name="movie_list"),
     path('actor/list', ActorListView.as_view(), name="actor_list"),
-
 ]

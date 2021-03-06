@@ -21,3 +21,8 @@
     background-color: #008CBA;
     color: white;
 }
+
+.input_field:active {
+    border: #008CBA;
+    box-shadow: azure;
+}

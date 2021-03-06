@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+
+{% block content %}
+    Registration
+    <form method="post" autocomplete="no">
+        {% csrf_token %}
+        <div class="fieldWrapper">
+            {{ form.email.errors }}
+            <label for="{{ form.email }}"> user</label>
+            {{ form.email }}
+        </div>
+        <div class="fieldWrapper">
+            {{ form.password1.errors }}
+            <label for="{{ form.password1 }}"> Password:</label>
+            {{ form.password1 }}
+        </div>
+        <div class="fieldWrapper">
+            {{ form.password2.errors }}
+            <label for="{{ form.password2 }}"> Repeat Password:</label>
+            {{ form.password2 }}
+        </div>
+        <div class="fieldWrapper">
+            {{ form.warehouse.errors }}
+            <label for="{{ form.warehouse }}"> Warehouse: </label>
+            {{ form.warehouse }}
+        </div>
+        <div class="fieldWrapper">
+            {{ form.is_staff.errors }}
+            <label for="{{ form.is_staff }}"> Is staff: </label>
+            {{ form.is_staff }}
+        </div>
+
+
+        <button class="button button2" type="submit" value="Submit"> Submit</button>
+    </form>
+{% endblock %}
+
+</body>
+</html>

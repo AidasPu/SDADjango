@@ -1,5 +1,5 @@
 from django.forms import ModelForm, CharField, DateTimeField, Textarea, EmailField, ChoiceField
-from users.models import User
+from old_uers.models import User
 
 class CreateUserForm(ModelForm):
     class Meta:
