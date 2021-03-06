@@ -6,8 +6,9 @@
 
 </head>
 <body>
-
-Hello {{ user }}
+{% if user.is_authenticated %}
+    Hello {{ user }}
+{% endif %}
 {{ word }} {{ word1 }}
 </body>
 </html>

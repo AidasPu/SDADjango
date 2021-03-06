@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.contrib import sessions
 from movies.models import Actor, Movie
 from django.views.generic import CreateView, ListView
 from movies.forms import MovieForm, ActorForm
@@ -16,8 +17,8 @@ class Create_movie(PermissionRequiredMixin, CreateView):
     model = Movie
     form_class = MovieForm
     template_name = "create_movie.html"
+    permission_required = 'movies.add_movie'
     success_url = "/movie/list"
-    permission_required = 'user.delete_user'
 
 
 class MovieListView(ListView):

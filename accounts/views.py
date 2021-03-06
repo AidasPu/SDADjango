@@ -22,10 +22,7 @@ def register(request):
     if request.method == "POST":
         if form.is_valid():
             form.save()
+            return redirect('login')
 
-            login(request, request.user)
-            return redirect('index')
     context = {"form": form}
     return render(request, 'register.html', context)
-
-# Create your views here.
