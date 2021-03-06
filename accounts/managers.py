@@ -7,6 +7,8 @@ class UserUserManager(BaseUserManager):
         user = self.model(email=email, **extra_fields)
         user.set_password(password)
         user.save()
+        if extra_fields.get('is_superuser') != True:
+            extra_fields.setdefault('is_active', False)
         return user
 
     def create_superuser(self, email, password, **extra_fields):

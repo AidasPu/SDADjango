@@ -1,5 +1,5 @@
 from django.contrib.auth.models import AbstractUser
-from django.db.models import Model, CharField, EmailField, DateTimeField
+from django.db.models import Model, CharField, EmailField, DateTimeField, BooleanField
 from django.utils import timezone
 from accounts.managers import UserUserManager
 

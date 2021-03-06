@@ -8,18 +8,15 @@
 
 {% block content %}
     Registration
-    <form method="post" autocomplete="no">
+    <form method="post">
         {% csrf_token %}
-        <div class="fieldWrapper">
-            {{ form.username.errors }}
-            <label for="{{ form.username }}"> username:</label>
-            {{ form.username }}
-        </div>
-        <div class="fieldWrapper">
-            {{ form.password.errors }}
-            <label for="{{ form.password }}"> Password:</label>
-            {{ form.password }}
-        </div>
+        {% for field in form %}
+            <div class="input_field">
+                {{ field.errors }}
+                {{ field.label }}
+                {{ field }}
+            </div>
+        {% endfor %}
         <button class="button button2" type="submit" value="Submit"> Submit</button>
     </form>
 {% endblock %}
