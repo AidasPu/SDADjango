@@ -1,5 +1,4 @@
-from django.shortcuts import render
-from django.contrib import sessions
+
 from movies.models import Actor, Movie
 from django.views.generic import CreateView, ListView
 from movies.forms import MovieForm, ActorForm

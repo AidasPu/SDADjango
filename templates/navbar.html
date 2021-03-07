@@ -1,15 +1,36 @@
+{% load i18n %}
 <nav>
     <div class="nav-wrapper">
         <ul>
             {% if user.is_authenticated == False %}
-            <li><a href="{% url 'login' %}" class="left-align">Login</a></li>
-            <li class="divider"></li>
-            <li><a href="{% url 'register' %}" class="center-align">Register</a></li>
-            <li class="divider"></li>
+                {#                <li><a href="{% url 'login' %}" class="left-align">Login</a></li>#}
+                {#                <li class="divider"></li>#}
+                {#                <li><a href="{% url 'register' %}" class="center-align">Register</a></li>#}
+                {#                <li class="divider"></li>#}
             {% endif %}
-            <li><a href="{% url 'movie_list' %}" class="right-align">List Movies</a></li>
-            <li class="divider"></li>
-            <li><a href="{% url 'create_movie' %}" class="left">Create Movies</a></li>
+            {#            <li><a href="{% url 'movie_list' %}" class="right-align">List Movies</a></li>#}
+            {#            <li class="divider"></li>#}
+            {#            <li><a href="{% url 'create_movie' %}" class="left">Create Movies</a></li>#}
+            {#            <li class="divider"></li>#}
+            <li><a class="dropdown-trigger" href="#" data-target="dropdown1">Dropdown</a></li>
         </ul>
     </div>
 </nav>
+<ul id="dropdown1" class="dropdown-content">
+    {% get_current_language as LANGUAGE_CODE %}
+    {% get_available_languages as LANGUAGES %}
+    {% get_language_info_list for LANGUAGES as languages %}
+
+    {% for language in languages %}
+        <li><a href="/{{ language.code }}">{{ language.name_local }}</a></li>
+    {% endfor %}
+</ul>
+
+<script>
+    $(document).ready(function () {
+        $('.dropdown-trigger').dropdown();
+    });
+</script>
+
+
+

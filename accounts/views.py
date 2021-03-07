@@ -6,6 +6,7 @@ from django.contrib.auth import login
 from accounts.forms import CreateUserCustomForm
 from django.contrib.auth.views import LoginView, LogoutView
 from datetime import datetime
+from django.utils.translation import gettext as _
 
 
 @login_required
@@ -14,7 +15,9 @@ def hello(request):
 
 
 def index(request):
-    return render(request, "index.html")
+    context = {'translate_this': _("a sentence")}
+
+    return render(request, "index.html", context)
 
 
 def register(request):
