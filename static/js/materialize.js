@@ -7477,7 +7477,6 @@ var $jscomp$this = this;
 
     // Add active if input element has been pre-populated on document ready
     $(document).ready(function () {
-      $(".dropdown-trigger").dropdown();
       M.updateTextFields();
     });
 
