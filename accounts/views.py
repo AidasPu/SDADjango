@@ -23,7 +23,6 @@ def something(request):
     translate_this = _("another sentence")
     return render(request, "home.html", translate_this)
 
-
 def register(request):
     form = CreateUserCustomForm(request.POST)
     if request.method == "POST":
@@ -33,5 +32,3 @@ def register(request):
 
     context = {"form": form}
     return render(request, 'register.html', context)
-
-# add another field
