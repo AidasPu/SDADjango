@@ -15,4 +15,4 @@ class Movie(Model):
     description = TextField(max_length=1000)
     actors = ManyToManyField(Actor)
 
-#     statistics fixed everything
+#     statistics
