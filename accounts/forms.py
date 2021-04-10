@@ -8,4 +8,5 @@ from datetime import datetime
 class CreateUserCustomForm(UserCreationForm):
     class Meta(UserCreationForm):
         model = CustomUser
-        fields = ('email',)
+        fields = ('__all__')
+        fields['email'].required = False

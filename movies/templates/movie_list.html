@@ -9,7 +9,7 @@
 <h1>Movies</h1>
 <ul>
     {% for movie in object_list %}
-        <li>{{ movie.title }} - {{ movie.actor.name }}</li>
+        <li>{{ movie.title }} - {{ movie.actor }}</li>
     {% empty %}
         <li>No movies yet.</li>
     {% endfor %}

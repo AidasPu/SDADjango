@@ -17,7 +17,10 @@ class Create_movie(PermissionRequiredMixin, CreateView):
     form_class = MovieForm
     template_name = "create_movie.html"
     permission_required = 'movies.add_movie'
+    permission_denied_message = "you need to login or have permission"
     success_url = "/movie/list"
+
+    login_url = "accounts:login"
 
 
 class MovieListView(ListView):

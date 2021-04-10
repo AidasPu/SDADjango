@@ -22,6 +22,6 @@ urlpatterns = [
 ]
 
 urlpatterns += i18n_patterns(
+    path('', include('movies.urls', namespace='movies')),
     path('', include('accounts.urls', namespace='accounts')),
-    # path('', include('movies.urls', namespace='movies'))
 )

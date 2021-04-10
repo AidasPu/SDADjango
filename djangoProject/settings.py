@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
-LOGIN_REDIRECT_URL = 'index'
+LOGIN_REDIRECT_URL = 'accounts:index'
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'vnivon3i2ovn32oin23voin23'
 
@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'old_uers',
-    # 'movies',
+    'movies',
     'accounts'
 ]
 
@@ -68,7 +68,6 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
-                'django.template.context_processors.i18n',
                 'django.contrib.messages.context_processors.messages',
             ],
         },
