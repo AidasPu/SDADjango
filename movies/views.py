@@ -31,3 +31,6 @@ class MovieListView(ListView):
 class ActorListView(ListView):
     model = Actor
     template_name = "actor_list.html"
+
+
+a = "statistics"

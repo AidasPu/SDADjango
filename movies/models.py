@@ -14,3 +14,5 @@ class Movie(Model):
     lenght = IntegerField(verbose_name="Lenght in seconds")
     description = TextField(max_length=1000)
     actors = ManyToManyField(Actor)
+
+#     statistics fixed everything
